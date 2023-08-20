@@ -115,6 +115,9 @@ try:
 		print(f"'{gamepath}' doesn't exist or does not contain a game.", file=sys.stderr)
 		exit(1)
 	texturepaths.append(os.path.join(gamepath, "mods"))
+	if os.path.isdir(os.path.join(gamepath, "textures")):
+		texturepaths.append(os.path.join(gamepath, "textures"))
+
 except StopIteration:
 	print("No game path set but one is required. (see --help)", file=sys.stderr)
 	exit(1)
